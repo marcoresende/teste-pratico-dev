@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" shutdownHook="disable">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{dd/MM/yyyy HH:mm:ss.SSS} %-5level %C{1} - %msg%n" />
+		</Console>
+		<RollingFile name="AppFile" fileName="/testepratico/log.log" filePattern="/testepratico/arquivo/$${date:yyyy-MM}/log-%d{MM-dd-yyyy}.log.gz">
+			<PatternLayout>
+				<Pattern>%d{dd/MM/yyyy HH:mm:ss.SSS} %-5level - %C{1} - %msg%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" /> <!-- Rotaciona o log diariamente -->
+			</Policies>
+			<DefaultRolloverStrategy max="60" /> <!-- Mantem os aquivos por 60 dias -->
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.github.marcoresende.testepraticodev" level="info">
+			<AppenderRef ref="AppFile" />
+		</Logger>
+		<Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="AppFile" />
+        </Root>
+		<Root level="error">
+            <AppenderRef ref="Console" />
+        </Root>
+        <Logger name="com.github.marcoresende.testepraticodev" level="trace">
+            <AppenderRef ref="Console" />
+        </Logger>
+	</Loggers>
+</Configuration>
