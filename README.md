@@ -9,9 +9,10 @@ Teste de seleção
 1. Importar código fonte como um projeto Maven para o ambiente de desenvolvimento.
 2. Configurar arquivo de propriedades (opicional):
 Se necessário, é possível alterar o contexto, porta e URL da API configurados na aplicação. Basta editar o arquivo "aplication.properties".
-	>server.contextPath=/projecoes
-	server.port=9599
-	server.external.api.ibge=https://servicodados.ibge.gov.br/api/v1/projecoes/populacao
+	>
+	 - server.contextPath=/projecoes
+	 - server.port=9599
+	 - server.external.api.ibge=https://servicodados.ibge.gov.br/api/v1/projecoes/populacao
 3. Executar "Maven Install" para gerar versão
 4. Para iniciar a aplicação basta executar o comando:
 	> java -jar teste-pratico-dev-1.0.0.jar
@@ -31,8 +32,8 @@ Se necessário, é possível alterar o contexto, porta e URL da API configurados
 	- dataProjecao - String
 	- populacaoProjetada - Integer
 	- messages - Array de Objetos
-			- severity - String ("INFO", "ERROR", "WARN")
-			- description - String
+		- severity - String ("INFO", "ERROR", "WARN")
+		- description - String
 - Exemplo:
 	>		
 		{
@@ -54,8 +55,8 @@ Se necessário, é possível alterar o contexto, porta e URL da API configurados
 		- dataProjecao - String
 		- populacaoProjetada - Integer
 	- messages - Array de Objetos
-			- severity - String ("INFO", "ERROR", "WARN")
-			- description - String
+		- severity - String ("INFO", "ERROR", "WARN")
+		- description - String
 - Exemplo:
 	>		
 		{
